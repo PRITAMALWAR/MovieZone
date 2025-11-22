@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MovieZone - Discover Amazing Movies</title>
+    <title>MovieZone - Favorite Movies</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,8 +14,8 @@
                 <h1><a href="index.html">MovieZone</a></h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="favorites.html" class="nav-link">Favorites</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="favorites.html" class="nav-link active">Favorites</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
             <div class="mobile-menu-toggle">
@@ -26,45 +26,38 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="home-main-content">
-        <main class="main-content">
-            <!-- Filters at Top -->
-            <div class="home-filters-top">
-                <div class="filter-navbar-group">
-                    <input type="text" id="searchInput" class="filter-navbar-search" placeholder="Search movies, actors, directors...">
-                </div>
-                <div class="filter-navbar-group">
-                    <select id="sortSelect" class="filter-navbar-select">
-                        <option value="default">Sort: Default</option>
-                        <option value="rating-desc">Rating (High to Low)</option>
-                        <option value="rating-asc">Rating (Low to High)</option>
-                        <option value="year-desc">Year (Newest First)</option>
-                        <option value="year-asc">Year (Oldest First)</option>
-                        <option value="title-asc">Title (A to Z)</option>
-                        <option value="title-desc">Title (Z to A)</option>
-                    </select>
-                </div>
-                <div class="filter-navbar-group">
-                    <select id="categorySelect" class="filter-navbar-select">
-                        <option value="all">Category: All</option>
-                    </select>
+    <!-- Favorites Page Content -->
+    <section class="favorites-page-section">
+        <div class="container">
+            <div class="favorites-header-bar">
+                <h1 class="favorites-heading">My Favorites</h1>
+                <select id="favoritesSortSelect" class="favorites-sort">
+                    <option value="default">Default</option>
+                    <option value="rating-desc">Rating (High to Low)</option>
+                    <option value="rating-asc">Rating (Low to High)</option>
+                    <option value="year-desc">Year (Newest First)</option>
+                    <option value="year-asc">Year (Oldest First)</option>
+                    <option value="title-asc">Title (A to Z)</option>
+                    <option value="title-desc">Title (Z to A)</option>
+                </select>
+            </div>
+
+            <!-- Empty State -->
+            <div id="favoritesEmptyState" class="favorites-empty" style="display: none;">
+                <div class="empty-wrapper">
+                    <div class="empty-icon">♡</div>
+                    <h2 class="empty-title">No favorites yet</h2>
+                    <p class="empty-message">Start adding movies to your favorites!</p>
+                    <button class="empty-button" onclick="window.location.href='index.html'">Browse Movies</button>
                 </div>
             </div>
 
-            <!-- All Movies Section -->
-            <section class="movies-section">
-                <div id="moviesGrid" class="movies-grid">
-                    <!-- Movies will be loaded here by JavaScript -->
-                </div>
-                
-                <!-- Pagination -->
-                <div class="pagination-container" id="paginationContainer">
-                    <!-- Pagination will be loaded here -->
-                </div>
-            </section>
-        </main>
-    </div>
+            <!-- Favorites Grid -->
+            <div id="favoritesGrid" class="favorites-grid">
+                <!-- Favorite movies will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -142,5 +135,12 @@
     </script>
 
     <script src="script.js"></script>
+    <script>
+        // Load favorites on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            loadFavoritesPage();
+        });
+    </script>
 </body>
 </html>
+

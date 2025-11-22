@@ -1,0 +1,223 @@
+[
+    {
+      "id": 1,
+      "title": "Shadow of Eternity",
+      "year": 2023,
+      "category": "Sci-Fi",
+      "image": "https://m.media-amazon.com/images/I/71bPati+aaL.jpg",
+      "actors": ["Liam Carter", "Ava Reynolds"],
+      "director": "Nora Williams",
+      "rating": 8.2,
+      "description": "A scientist discovers a portal leading to alternate timelines, but each jump threatens the fabric of reality."
+    },
+    {
+      "id": 2,
+      "title": "Whispers in the Valley",
+      "year": 2021,
+      "category": "Drama",
+      "image": "https://m.media-amazon.com/images/I/519ovZQZjrL._AC_UF1000,1000_QL80_.jpg",
+      "actors": ["Maya Sanders", "Daniel Brooks"],
+      "director": "Elijah Collins",
+      "rating": 7.5,
+      "description": "A young woman returns home to confront painful family secrets buried in a quiet rural town."
+    },
+    {
+      "id": 3,
+      "title": "Neon Streets",
+      "year": 2022,
+      "category": "Action",
+      "image": "https://thumbs.dreamstime.com/b/movie-cinema-marquee-sign-change-man-changing-neon-long-pole-letters-109669197.jpg",
+      "actors": ["Jack Turner", "Sakura Lin"],
+      "director": "Marco Diaz",
+      "rating": 7.9,
+      "description": "A skilled driver becomes entangled with cybercriminals in a futuristic neon-lit city."
+    },
+    {
+      "id": 4,
+      "title": "Garden of Echoes",
+      "year": 2020,
+      "category": "Fantasy",
+      "image": "https://in.bmscdn.com/events/moviecard/ET00466419.jpg",
+      "actors": ["Elena Frost", "Henry Cole"],
+      "director": "Alicia Morgan",
+      "rating": 8.0,
+      "description": "A girl stumbles upon a magical garden where memories manifest as living creatures."
+    },
+    {
+      "id": 5,
+      "title": "Midnight Detective",
+      "year": 2024,
+      "category": "Crime",
+      "image": "https://m.media-amazon.com/images/M/MV5BNjljNDU1YzktY2JiMi00YWMyLWJlMjItMTExMzk2NmIxODA1XkEyXkFqcGc@._V1_.jpg",
+      "actors": ["Owen Harris", "Ruby Lane"],
+      "director": "Chase Bennett",
+      "rating": 8.4,
+      "description": "A hard-boiled detective unravels a string of murders tied to a mysterious underground syndicate."
+    },
+    {
+      "id": 6,
+      "title": "Storm Above the Sea",
+      "year": 2019,
+      "category": "Adventure",
+      "image": "https://upload.wikimedia.org/wikipedia/en/a/a6/Horizon_Line_film_poster.png",
+      "actors": ["Tara Miles", "Finn Walker"],
+      "director": "Harper Quinn",
+      "rating": 7.3,
+      "description": "Sailors face a supernatural storm while searching for a legendary lost island."
+    },
+    {
+      "id": 7,
+      "title": "The Last Algorithm",
+      "year": 2024,
+      "category": "Thriller",
+      "image": "https://m.media-amazon.com/images/I/61X2m06BUBL._UF1000,1000_QL80_.jpg",
+      "actors": ["Adrian Knight", "Sofia Hale"],
+      "director": "Dmitri Ivanov",
+      "rating": 8.6,
+      "description": "An AI engineer becomes the target of a rogue intelligence she unknowingly created."
+    },
+    {
+      "id": 8,
+      "title": "Frozen Ashes",
+      "year": 2021,
+      "category": "Mystery",
+      "image": "https://m.media-amazon.com/images/I/71Y0e5cgObL._UF1000,1000_QL80_.jpg",
+      "actors": ["Clara Deen", "Miles Archer"],
+      "director": "Ren Kimura",
+      "rating": 7.1,
+      "description": "A cold-case detective uncovers new clues in a decades-old disappearance in the Arctic."
+    },
+    {
+      "id": 9,
+      "title": "Children of Tomorrow",
+      "year": 2022,
+      "category": "Sci-Fi",
+      "image": "https://m.media-amazon.com/images/I/61bzub+hAlL.jpg",
+      "actors": ["Evan Rhodes", "Mila Carter"],
+      "director": "Jonas Adler",
+      "rating": 7.8,
+      "description": "Genetically enhanced children struggle to find their place in a society that fears them."
+    },
+    {
+      "id": 10,
+      "title": "Moonlit Promise",
+      "year": 2020,
+      "category": "Romance",
+      "image": "https://m.media-amazon.com/images/I/71nh7x6jwUL._UF1000,1000_QL80_.jpg",
+      "actors": ["Hazel Moore", "Oliver Dean"],
+      "director": "Sierra Blake",
+      "rating": 7.6,
+      "description": "Two strangers form an unexpected bond under the glow of a full moon on a Mediterranean island."
+    },
+    {
+      "id": 11,
+      "title": "Iron Wolves",
+      "year": 2023,
+      "category": "Action",
+      "image": "https://m.media-amazon.com/images/M/MV5BZDQzNmY0MjctMmZiYy00NzhjLTkyNDYtZTNiN2E0MDNlOWM2XkEyXkFqcGc@._V1_.jpg",
+      "actors": ["Damon Reyes", "Kara Flint"],
+      "director": "Victor Hale",
+      "rating": 8.1,
+      "description": "An elite military unit faces impossible odds when they're sent to rescue hostages from a fortified enemy compound."
+    },
+    {
+      "id": 12,
+      "title": "Paper Dreams",
+      "year": 2021,
+      "category": "Family",
+      "image": "https://m.media-amazon.com/images/M/MV5BYzhkNDdiN2UtYmEwZS00YTgwLWFlMGUtZGExYjg2YzBiZGI5XkEyXkFqcGc@._V1_.jpg",
+      "actors": ["Ella Knight", "Sam Keller"],
+      "director": "Nina Patel",
+      "rating": 6.9,
+      "description": "A boy’s origami creations come to life, teaching him courage and imagination."
+    },
+    {
+      "id": 13,
+      "title": "Veil of Silence",
+      "year": 2020,
+      "category": "Thriller",
+      "image": "https://m.media-amazon.com/images/I/81sDSDRgZIL._UF1000,1000_QL80_.jpg",
+      "actors": ["Isabelle Trent", "Logan Pierce"],
+      "director": "Marcus Lee",
+      "rating": 7.4,
+      "description": "A journalist uncovers a conspiracy hidden behind a mysterious blackout."
+    },
+    {
+      "id": 14,
+      "title": "Dance of Ember",
+      "year": 2019,
+      "category": "Fantasy",
+      "image": "https://images.moviesanywhere.com/eef76e63f9069d85dd4712e29df8c019/20f2478d-f427-456d-a390-352598e678a7.jpg",
+      "actors": ["Nova Sinclair", "Arden Hayes"],
+      "director": "Kira Lawson",
+      "rating": 7.0,
+      "description": "A fire dancer discovers she can manipulate real flames and must protect her village from invaders."
+    },
+    {
+      "id": 15,
+      "title": "Harbor Lights",
+      "year": 2022,
+      "category": "Drama",
+      "image": "https://upload.wikimedia.org/wikipedia/en/f/fa/HarbourLightsNickBerry.jpg",
+      "actors": ["James Holloway", "Lena Ford"],
+      "director": "Ethan Brooks",
+      "rating": 7.7,
+      "description": "A fisherman battles grief and financial hardship as he fights to save his family business."
+    },
+    {
+      "id": 16,
+      "title": "Ghost Signal",
+      "year": 2023,
+      "category": "Horror",
+      "image": "https://m.media-amazon.com/images/I/71NUZOrmmsL._AC_UF1000,1000_QL80_.jpg",
+      "actors": ["Riley Moss", "Cole Weston"],
+      "director": "Harley Winters",
+      "rating": 6.8,
+      "description": "A late-night radio host receives disturbing transmissions from another dimension."
+    },
+    {
+      "id": 17,
+      "title": "Azure Skies",
+      "year": 2021,
+      "category": "Adventure",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg39UUdwSfcb-q5tCrC-1qg_7l8x8_PzQQmw&s",
+      "actors": ["Anna Duarte", "Liam Stone"],
+      "director": "Cora Mitchell",
+      "rating": 7.2,
+      "description": "Two pilots race across continents to stop an environmental catastrophe."
+    },
+    {
+      "id": 18,
+      "title": "City of Brass",
+      "year": 2024,
+      "category": "Fantasy",
+      "image": "https://m.media-amazon.com/images/I/91FC+VuhM9L._AC_UF1000,1000_QL80_.jpg",
+      "actors": ["Yasmin Farah", "Omar Hale"],
+      "director": "Selim Karim",
+      "rating": 8.3,
+      "description": "A thief discovers a hidden city of djinn and becomes entangled in ancient politics."
+    },
+    {
+      "id": 19,
+      "title": "Parallel Hearts",
+      "year": 2022,
+      "category": "Romance",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5VvJcmt85EXcJH7QpAu-I5UDCk300p9Dt1g&s",
+      "actors": ["Chloe Rivers", "Ethan Miles"],
+      "director": "Hannah Cole",
+      "rating": 7.8,
+      "description": "Two people fall in love across alternate versions of the same universe."
+    },
+    {
+      "id": 20,
+      "title": "The Silent Orbit",
+      "year": 2023,
+      "category": "Sci-Fi Thriller",
+      "image": "https://miro.medium.com/v2/resize:fit:1024/1*eZAcs3UOTwhpCHPMU58tsA.png",
+      "actors": ["Max Dalton", "Ivy Monroe"],
+      "director": "Roxanne Vega",
+      "rating": 8.5,
+      "description": "Astronauts aboard a remote space station uncover a signal predicting a catastrophic event on Earth."
+    }
+  ]
+  
