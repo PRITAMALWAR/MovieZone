@@ -241,7 +241,7 @@ function displayMovies(movies) {
         
         const isFav = isFavorite(movie.id);
         movieCard.innerHTML = `
-            <button class="favorite-btn ${isFav ? 'active' : ''}" data-movie-id="${movie.id}" onclick="toggleFavorite(${movie.id}, event)" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}">
+            <button class="favorite-btn ${isFav ? 'active' : ''}" data-movie-id="${movie.id}" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}">
                 ${isFav ? '♥' : '♡'}
             </button>
             <img src="${movie.image}" alt="${movie.title}" class="movie-card-image" 
@@ -256,6 +256,15 @@ function displayMovies(movies) {
                 <span class="movie-card-category">${movie.category}</span>
             </div>
         `;
+        
+        // Add event listener for favorite button
+        const favoriteBtn = movieCard.querySelector('.favorite-btn');
+        if (favoriteBtn) {
+            favoriteBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleFavorite(movie.id, e);
+            });
+        }
         
         movieCard.addEventListener('click', function(e) {
             // Don't navigate if clicking favorite button
@@ -290,7 +299,7 @@ function displayPagination(totalMovies, totalPages) {
     // Previous button
     paginationHTML += `
         <button class="pagination-btn ${currentPage === 1 ? 'disabled' : ''}" 
-                onclick="changePage(${currentPage - 1})" 
+                data-page="${currentPage - 1}"
                 ${currentPage === 1 ? 'disabled' : ''}>
             &laquo; Prev
         </button>
@@ -306,7 +315,7 @@ function displayPagination(totalMovies, totalPages) {
     }
     
     if (startPage > 1) {
-        paginationHTML += `<button class="pagination-btn" onclick="changePage(1)">1</button>`;
+        paginationHTML += `<button class="pagination-btn" data-page="1">1</button>`;
         if (startPage > 2) {
             paginationHTML += `<span class="pagination-info">...</span>`;
         }
@@ -315,7 +324,7 @@ function displayPagination(totalMovies, totalPages) {
     for (let i = startPage; i <= endPage; i++) {
         paginationHTML += `
             <button class="pagination-btn ${i === currentPage ? 'active' : ''}" 
-                    onclick="changePage(${i})">
+                    data-page="${i}">
                 ${i}
             </button>
         `;
@@ -325,19 +334,29 @@ function displayPagination(totalMovies, totalPages) {
         if (endPage < totalPages - 1) {
             paginationHTML += `<span class="pagination-info">...</span>`;
         }
-        paginationHTML += `<button class="pagination-btn" onclick="changePage(${totalPages})">${totalPages}</button>`;
+        paginationHTML += `<button class="pagination-btn" data-page="${totalPages}">${totalPages}</button>`;
     }
     
     // Next button
     paginationHTML += `
         <button class="pagination-btn ${currentPage === totalPages ? 'disabled' : ''}" 
-                onclick="changePage(${currentPage + 1})" 
+                data-page="${currentPage + 1}"
                 ${currentPage === totalPages ? 'disabled' : ''}>
             Next &raquo;
         </button>
     `;
     
     paginationContainer.innerHTML = paginationHTML;
+    
+    // Add event listeners to pagination buttons
+    paginationContainer.querySelectorAll('.pagination-btn:not(.disabled)').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const page = parseInt(this.getAttribute('data-page'));
+            if (page && !this.classList.contains('disabled')) {
+                changePage(page);
+            }
+        });
+    });
 }
 
 // ===================================
@@ -465,7 +484,7 @@ function loadFeaturedMovies() {
         const isFav = isFavorite(movie.id);
         card.innerHTML = `
             <div style="position: relative;">
-                <button class="favorite-btn ${isFav ? 'active' : ''}" data-movie-id="${movie.id}" onclick="toggleFavorite(${movie.id}, event)" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}">
+                <button class="favorite-btn ${isFav ? 'active' : ''}" data-movie-id="${movie.id}" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}">
                     ${isFav ? '♥' : '♡'}
                 </button>
                 <img src="${movie.image}" alt="${movie.title}" class="featured-movie-image" 
@@ -477,6 +496,15 @@ function loadFeaturedMovies() {
                 <div class="featured-movie-rating">${movie.year} • ${movie.category}</div>
             </div>
         `;
+        
+        // Add event listener for favorite button
+        const favoriteBtn = card.querySelector('.favorite-btn');
+        if (favoriteBtn) {
+            favoriteBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleFavorite(movie.id, e);
+            });
+        }
         
         card.addEventListener('click', function(e) {
             if (!e.target.closest('.favorite-btn')) {
@@ -828,7 +856,7 @@ async function loadMovieDetail() {
         detailContainer.innerHTML = `
             <div class="movie-detail-main">
                 <div class="movie-poster-card">
-                    <button class="favorite-btn-small ${isFav ? 'active' : ''}" data-movie-id="${movie.id}" onclick="toggleFavorite(${movie.id}, event)" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}">
+                    <button class="favorite-btn-small ${isFav ? 'active' : ''}" data-movie-id="${movie.id}" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}">
                         ${isFav ? '♥' : '♡'}
                     </button>
                     <img src="${movie.image}" alt="${movie.title}" class="movie-poster-img"
@@ -878,6 +906,15 @@ async function loadMovieDetail() {
                 </div>
             </div>
         `;
+        
+        // Add event listener for favorite button
+        const favoriteBtn = detailContainer.querySelector('.favorite-btn-small');
+        if (favoriteBtn) {
+            favoriteBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleFavorite(movie.id, e);
+            });
+        }
         
         // Update favorite buttons after loading
         updateFavoriteButtons();
@@ -986,7 +1023,7 @@ async function loadFavoritesPage() {
             movieCard.className = 'favorite-movie-card';
             
             movieCard.innerHTML = `
-                <button class="remove-favorite-btn-small" onclick="removeFromFavorites(${movie.id}); loadFavoritesPage();" title="Remove from favorites">
+                <button class="remove-favorite-btn-small" data-movie-id="${movie.id}" title="Remove from favorites">
                     ×
                 </button>
                 <img src="${movie.image}" alt="${movie.title}" class="favorite-card-image" 
@@ -1001,8 +1038,18 @@ async function loadFavoritesPage() {
                 </div>
             `;
             
+            // Add event listener for remove favorite button
+            const removeBtn = movieCard.querySelector('.remove-favorite-btn-small');
+            if (removeBtn) {
+                removeBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    removeFromFavorites(movie.id);
+                    loadFavoritesPage();
+                });
+            }
+            
             movieCard.addEventListener('click', function(e) {
-                if (!e.target.closest('.remove-favorite-btn')) {
+                if (!e.target.closest('.remove-favorite-btn-small')) {
                     localStorage.setItem('selectedMovieId', movie.id);
                     window.location.href = 'movie-detail.html';
                 }

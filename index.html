@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; font-src 'self' data:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="X-Content-Type-Options" content="nosniff">
     <title>MovieZone - Discover Amazing Movies</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,6 +20,8 @@
                 <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="favorites.html" class="nav-link">Favorites</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+                <li><a href="signup.html" class="nav-link">Sign Up</a></li>
             </ul>
             <div class="mobile-menu-toggle">
                 <span></span>
@@ -75,17 +80,17 @@
                         <h3>MovieZone</h3>
                         <p>Your ultimate destination for discovering amazing movies. Explore, watch, and enjoy!</p>
                         <div class="social-links">
-                            <a href="#" class="social-link" aria-label="Facebook">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/500px-Facebook_Logo_%282019%29.png" alt="Facebook">
+                            <a href="#" class="social-link" aria-label="Facebook" rel="noopener noreferrer">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/500px-Facebook_Logo_%282019%29.png" alt="Facebook" crossorigin="anonymous" loading="lazy">
                             </a>
-                            <a href="#" class="social-link" aria-label="Twitter">
-                                <img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png" alt="Twitter">
+                            <a href="#" class="social-link" aria-label="Twitter" rel="noopener noreferrer">
+                                <img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png" alt="Twitter" crossorigin="anonymous" loading="lazy">
                             </a>
-                            <a href="#" class="social-link" aria-label="Instagram">
-                                <img src="https://static.vecteezy.com/system/resources/thumbnails/038/447/961/small/ai-generated-instagram-logo-free-png.png" alt="Instagram">
+                            <a href="#" class="social-link" aria-label="Instagram" rel="noopener noreferrer">
+                                <img src="https://static.vecteezy.com/system/resources/thumbnails/038/447/961/small/ai-generated-instagram-logo-free-png.png" alt="Instagram" crossorigin="anonymous" loading="lazy">
                             </a>
-                            <a href="#" class="social-link" aria-label="YouTube">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">
+                            <a href="#" class="social-link" aria-label="YouTube" rel="noopener noreferrer">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" crossorigin="anonymous" loading="lazy">
                             </a>
                         </div>
                     </div>
@@ -113,7 +118,7 @@
                 <div class="footer-section">
                     <h4>Newsletter</h4>
                     <p class="newsletter-text">Subscribe to get updates on new movies and special offers</p>
-                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <form class="newsletter-form" id="newsletterForm">
                         <input type="email" placeholder="Enter your email" required>
                         <button type="submit">Subscribe</button>
                     </form>
@@ -133,14 +138,19 @@
         </div>
     </footer>
     
-    <script>
-        function subscribeNewsletter(event) {
-            event.preventDefault();
-            alert('Thank you for subscribing to MovieZone newsletter!');
-            event.target.reset();
-        }
-    </script>
-
     <script src="script.js"></script>
+    <script>
+        // Setup newsletter form handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    alert('Thank you for subscribing to MovieZone newsletter!');
+                    event.target.reset();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
